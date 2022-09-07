@@ -24,6 +24,10 @@
   {{ $css := slice $main_css $custom_css | resources.Concat "main.css" | minify }}
   <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
 
+  {{ if ne .Params.share false }}
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+  {{ end }}
+
   {{ if and .IsPage (not site.Params.disableHLJS) }}
   <script
     defer
