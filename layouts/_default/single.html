@@ -19,6 +19,9 @@
 
   <section>{{ .Content }}</section>
 
+  <!-- SNS Share buttons -->
+  {{ partial "share.html" . }}
+
   <!-- Post Tags -->
   {{ if .Params.tags }}
   <footer class="mt-12 flex flex-wrap">
@@ -63,6 +66,4 @@
   </script>
   {{ end }}
 </article>
-
-{{ partial "share.html" . }}
 {{ end }}
